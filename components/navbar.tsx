@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react"
 import Link from "next/link"
+import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
 
@@ -24,8 +25,16 @@ export function Navbar() {
       )}
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between">
-        <Link href="/" className="text-2xl font-black tracking-tighter text-white uppercase italic">
-          Faithwalkers
+        <Link href="/" className="flex items-center gap-3">
+          <Image
+            src="/images/faithwalkers-logo.png"
+            alt="Faithwalkers logo"
+            width={160}
+            height={48}
+            priority
+            className="object-contain"
+          />
+          <span className="sr-only">Faithwalkers</span>
         </Link>
 
         <div className="hidden md:flex items-center gap-8">
@@ -44,12 +53,14 @@ export function Navbar() {
           <Link href="/#contact" className="text-sm font-medium hover:text-primary transition-colors">
             Contact
           </Link>
+          {/* Join now button *}
           <Button
             variant="outline"
             className="border-primary text-primary hover:bg-primary hover:text-background bg-transparent"
           >
             Join Now
           </Button>
+          */}
         </div>
       </div>
     </nav>
