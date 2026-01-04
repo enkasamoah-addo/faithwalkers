@@ -49,6 +49,7 @@ export function Hero() {
               Learn More
             </Button>
           </div>
+          */}
         </motion.div>
       </div>
 
