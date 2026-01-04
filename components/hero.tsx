@@ -30,12 +30,13 @@ export function Hero() {
           <h1 className="text-6xl md:text-9xl font-black tracking-tighter mb-4 text-white uppercase italic">
             Faithwalkers
           </h1>
-          <p className="text-xl md:text-2xl font-bold text-primary mb-6">Salvation Is Here. Join Our Community.</p>
+          <p className="text-xl md:text-2xl font-bold text-primary mb-6">For we walk by faith, not by sight</p>
           <p className="text-lg text-muted-foreground mb-10 max-w-2xl mx-auto leading-relaxed">
             Empowering youth to discover their purpose, grow in faith, and build a community that reflects the love of
             Christ.
           </p>
 
+          {/* Call to action buttons
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Button size="lg" className="h-14 px-8 text-lg font-bold uppercase tracking-wider rounded-none">
               Join the Movement
