@@ -31,7 +31,7 @@ export function Hero() {
             Faithwalkers
           </h1>
           <p className="text-xl md:text-2xl font-bold text-primary mb-6">For we walk by faith, not by sight</p>
-          <p className="text-lg text-muted-foreground mb-10 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-lg text-white text-muted-foreground mb-10 max-w-2xl mx-auto leading-relaxed">
             Empowering youth to discover their purpose, grow in faith, and build a community that reflects the love of
             Christ.
           </p>
