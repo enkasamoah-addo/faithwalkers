@@ -139,16 +139,30 @@ export default function Home() {
               className="object-cover grayscale group-hover:grayscale-0 transition-all duration-500 scale-100 group-hover:scale-110"
             />
           </div>
-          {[2, 3, 4].map((i) => (
-            <div key={i} className="aspect-square relative rounded-xl overflow-hidden group">
-              <Image
-                src={`/youth-ministry-event-.jpg?key=jvxyv&height=400&width=400&query=youth+ministry+event+${i}`}
-                alt="Event"
-                fill
-                className="object-cover grayscale group-hover:grayscale-0 transition-all duration-500 scale-100 group-hover:scale-110"
-              />
-            </div>
-          ))}
+          <div className="aspect-square relative rounded-xl overflow-hidden group">
+            <Image
+              src="/4.jpg"
+              alt="Event 4"
+              fill
+              className="object-cover grayscale group-hover:grayscale-0 transition-all duration-500 scale-100 group-hover:scale-110"
+            />
+          </div>
+          <div className="aspect-square relative rounded-xl overflow-hidden group">
+            <Image
+              src="/5.png"
+              alt="Event 5"
+              fill
+              className="object-cover grayscale group-hover:grayscale-0 transition-all duration-500 scale-100 group-hover:scale-110"
+            />
+          </div>
+          <div className="aspect-square relative rounded-xl overflow-hidden group">
+            <Image
+              src="/6.png"
+              alt="Event 6"
+              fill
+              className="object-cover grayscale group-hover:grayscale-0 transition-all duration-500 scale-100 group-hover:scale-110"
+            />
+          </div>
         </div>
       </section>
 
