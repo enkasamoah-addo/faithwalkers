@@ -190,22 +190,22 @@ export default function ConferenceClientPage() {
           <div className="flex animate-marquee gap-12 whitespace-nowrap hover:[animation-play-state:paused]">
             {[...Array(2)].map((_, setIndex) =>
               [
-                "Faith Church Network",
-                "City Gospel Center",
-                "Youth Empowerment Fund",
-                "Kingdom Media Group",
-                "Divine Purpose Inc",
-                "Harvest Ministries",
-                "Hope Foundation",
-                "Grace Community",
+                { name: "Jameson", logo: "/images/sponsors/Jameson_Irish_Whiskey_logo.png" },
+                { name: "Johnnie Walker", logo: "/images/sponsors/Johnnie-Walker-Logo-PNG-Photos.png" },
+                { name: "MTN", logo: "/images/sponsors/MTN-Logo.png" },
+                { name: "Pepsi", logo: "/images/sponsors/Pepsi-Logo.wine.png" },
               ].map((sponsor, idx) => (
                 <div
                   key={`${setIndex}-${idx}`}
                   className="flex-shrink-0 h-24 px-12 bg-white/5 border border-white/10 rounded-xl flex items-center justify-center group hover:border-primary/50 transition-colors"
                 >
-                  <span className="text-xl font-black uppercase italic text-white/60 group-hover:text-primary transition-colors">
-                    {sponsor}
-                  </span>
+                  <Image
+                    src={sponsor.logo}
+                    alt={sponsor.name}
+                    width={100}
+                    height={80}
+                    className="object-contain"
+                  />
                 </div>
               )),
             )}
