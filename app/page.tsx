@@ -97,27 +97,18 @@ export default function Home() {
             </h2>
             <div className="space-y-4 mb-10">
               <div className="flex items-center gap-3 font-bold text-xl">
-                <Calendar className="w-6 h-6" /> August 15-18, 2025
+                <Calendar className="w-6 h-6" /> Coming Soon
               </div>
               <div className="flex items-center gap-3 font-bold text-xl">
-                <MapPin className="w-6 h-6" /> Downtown Arena, Main Hall
+                <MapPin className="w-6 h-6" /> Coming Soon
               </div>
             </div>
             <div className="flex flex-col sm:flex-row gap-4 mb-10">
               <Button
                 asChild
                 size="lg"
-                className="w-full sm:w-fit h-14 px-10 text-lg font-bold bg-background text-primary hover:bg-background/90 rounded-none uppercase"
-              >
-                <Link href="/hashem-youth-conference">
-                  Register Now <Ticket className="ml-2 w-5 h-5" />
-                </Link>
-              </Button>
-              <Button
-                asChild
-                size="lg"
                 variant="outline"
-                className="w-full sm:w-fit h-14 px-10 text-lg font-bold border-background text-background hover:bg-background hover:text-primary rounded-none uppercase bg-transparent"
+                className="w-full sm:w-fit h-14 px-10 text-lg font-bold bg-background text-primary hover:bg-background/90 rounded-none uppercase"
               >
                 <Link href="/hashem-youth-conference">Learn More</Link>
               </Button>
@@ -270,27 +261,16 @@ export default function Home() {
               here.
             </p>
             <div className="flex flex-wrap justify-center gap-6">
-              <Button
-                size="lg"
-                variant="outline"
-                className="rounded-none border-primary text-primary hover:bg-primary hover:text-background transition-colors bg-transparent"
-              >
-                Join a Group
-              </Button>
-              <Button
+            {/*  <Button
                 size="lg"
                 variant="outline"
                 className="rounded-none border-primary text-primary hover:bg-primary hover:text-background transition-colors bg-transparent"
               >
                 Become a Volunteer
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="rounded-none border-primary text-primary hover:bg-primary hover:text-background transition-colors bg-transparent"
-              >
-                Partner With Us
-              </Button>
+              </Button> */}
+            <Button size="lg" className="rounded-none px-10 font-bold uppercase tracking-wide h-14 text-lg">
+              Partner With US
+            </Button>              
             </div>
           </Card>
         </div>

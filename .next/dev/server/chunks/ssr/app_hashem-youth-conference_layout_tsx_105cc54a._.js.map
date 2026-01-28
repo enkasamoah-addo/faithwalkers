@@ -1,6 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 4, "column": 0}, "map": {"version":3,"sources":["file:///C:/Users/imebe/Desktop/faithwalkers/app/hashem-youth-conference/layout.tsx"],"sourcesContent":["import type React from \"react\"\r\nimport type { Metadata } from \"next\"\r\nimport \"../globals.css\"\r\n\r\nexport const metadata: Metadata = {\r\n  title: \"Hashem Youth Conference | Salvation Is Here\",\r\n  description:\r\n    \"Join the movement at the Hashem Youth Conference. Faith, purpose, and transformation for the next generation.\",\r\n}\r\n\r\nexport default function RootLayout({\r\n  children,\r\n}: {\r\n  children: React.ReactNode\r\n}) {\r\n  return children\r\n}\r\n"],"names":[],"mappings":";;;;;;;AAIO,MAAM,WAAqB;IAChC,OAAO;IACP,aACE;AACJ;AAEe,SAAS,WAAW,EACjC,QAAQ,EAGT;IACC,OAAO;AACT"}}]
-}

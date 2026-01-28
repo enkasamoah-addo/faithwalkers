@@ -2,12 +2,39 @@
 
 import Image from "next/image"
 import Link from "next/link"
+import { useEffect, useRef } from "react"
 import { Navbar } from "@/components/navbar"
 import { Button } from "@/components/ui/button"
 import { SpeakerCard } from "@/components/conference/speaker-card"
 import { Calendar, MapPin, Ticket, Zap, Users, Target, HandshakeIcon, UserPlus } from "lucide-react"
 
 export default function ConferenceClientPage() {
+  const videoRef = useRef<HTMLVideoElement>(null)
+
+  useEffect(() => {
+    const video = videoRef.current
+    if (!video) return
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            video.play().catch(() => {}) // Handle autoplay policy
+          } else {
+            video.pause()
+          }
+        })
+      },
+      { threshold: 0.5 } // Play when 50% of the video is visible
+    )
+
+    observer.observe(video)
+
+    return () => {
+      observer.disconnect()
+    }
+  }, [])
+
   return (
     <main className="min-h-screen bg-background font-sans">
       <Navbar />
@@ -44,26 +71,20 @@ export default function ConferenceClientPage() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Button
               size="lg"
-              className="h-16 px-10 text-xl font-bold uppercase tracking-wider rounded-none w-full sm:w-auto"
-            >
-              Register Now <Ticket className="ml-2 w-6 h-6" />
-            </Button>
-            <Button
-              size="lg"
               variant="outline"
-              className="h-16 px-10 text-xl font-bold uppercase tracking-wider rounded-none border-white/20 hover:bg-white/10 bg-transparent w-full sm:w-auto"
+              className="h-16 px-10 text-xl font-bold uppercase tracking-wider rounded-none w-full sm:w-auto"
             >
               Support the Event
             </Button>
           </div>
 
           <div className="mt-16 flex flex-wrap justify-center gap-10">
-            <div className="flex items-center gap-3 text-white font-bold text-lg">
+           {/* <div className="flex items-center gap-3 text-white font-bold text-lg">
               <Calendar className="w-6 h-6 text-primary" /> August 15-18, 2025
             </div>
             <div className="flex items-center gap-3 text-white font-bold text-lg">
               <MapPin className="w-6 h-6 text-primary" /> Downtown Arena, Main Hall
-            </div>
+            </div> */}
           </div>
         </div>
       </section>
@@ -96,7 +117,7 @@ export default function ConferenceClientPage() {
             </div>
           </div>
           <div className="relative aspect-video lg:aspect-square rounded-2xl overflow-hidden shadow-2xl shadow-primary/10">
-            <Image src="/energetic-youth-crowd-worship.jpg" alt="Vision" fill className="object-cover grayscale" />
+            <video ref={videoRef} src="/hashem video.MP4" loop muted={false} className="absolute inset-0 w-full h-full object-cover" />
             <div className="absolute inset-0 bg-primary/20 mix-blend-overlay" />
           </div>
         </div>
@@ -118,30 +139,33 @@ export default function ConferenceClientPage() {
         <div className="max-w-7xl mx-auto grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {[
             {
-              name: "David Walker",
+              name: "Abranham Seowabor",
               role: "Keynote Speaker",
               bio: "Founder of Faithwalkers with a passion for youth discipleship.",
+              image: "/images/speakers/man.png",
             },
             {
-              name: "Sarah Grace",
-              role: "Worship Leader",
-              bio: "Anointed worship leader bringing hearts to the throne of Hashem.",
-            },
-            {
-              name: "John Mark",
+              name: "Brother Issac",
               role: "Youth Pastor",
               bio: "Dynamic speaker focused on biblical purpose and spiritual growth.",
+              image: "/images/speakers/man.png",
             },
             {
-              name: "Elizabeth Reed",
-              role: "Missionary",
-              bio: "Dedicated to global outreach and empowering young leaders.",
+              name: "Jael Ama Kowaa",
+              role: "Worship Leader",
+              bio: "Anointed worship leader bringing hearts to the throne of Hashem.",
+              image: "/images/speakers/woman.png",
+            },
+            {
+              name: "Seyram SESE",
+              role: "Worship Leader",
+              bio: "Anointed worship leader bringing hearts to the throne of Hashem.",
+              image: "/images/speakers/woman.png",
             },
           ].map((speaker, idx) => (
             <SpeakerCard
               key={idx}
               {...speaker}
-              image={`/placeholder.svg?key=speaker-${idx}&height=600&width=500&query=christian+leader+portrait+${idx}`}
             />
           ))}
         </div>
@@ -154,21 +178,20 @@ export default function ConferenceClientPage() {
           <p className="text-muted-foreground">Relive the moments from previous conferences.</p>
         </div>
         <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-          <div className="aspect-square relative rounded-xl overflow-hidden group">
-            <Image
-              src="/images/conference-stage-highlight.jpg"
-              alt="Conference Stage with Marquee 20"
-              fill
-              className="object-cover grayscale group-hover:grayscale-0 transition-all duration-500 scale-100 group-hover:scale-110"
-            />
-          </div>
-          {[2, 3, 4, 5, 6].map((i) => (
-            <div key={i} className="aspect-square relative rounded-xl overflow-hidden group">
+          {[
+            { src: "/images/gallery/a.jpg", alt: "Conference Highlight 1" },
+            { src: "/images/gallery/b.jpg", alt: "Conference Highlight 2" },
+            { src: "/images/gallery/c.jpg", alt: "Conference Highlight 3" },
+            { src: "/images/gallery/d.jpg", alt: "Conference Highlight 4" },
+            { src: "/images/gallery/e.jpg", alt: "Conference Highlight 5" },
+            { src: "/images/conference-stage-highlight.jpg", alt: "Conference Stage" },
+          ].map((item, idx) => (
+            <div key={idx} className="aspect-square relative rounded-xl overflow-hidden">
               <Image
-                src={`/ceholder-svg-key-ro6c1-key-hyc-gal-.jpg?key=ro6c1&key=hyc-gal-${i}&height=400&width=400&query=youth+conference+highlight+${i}`}
-                alt="Highlight"
+                src={item.src}
+                alt={item.alt}
                 fill
-                className="object-cover grayscale group-hover:grayscale-0 transition-all duration-500 scale-100 group-hover:scale-110"
+                className="object-cover"
               />
             </div>
           ))}
@@ -242,14 +265,14 @@ export default function ConferenceClientPage() {
                 <HandshakeIcon className="w-6 h-6 mr-3 group-hover:scale-110 transition-transform" />
                 Become a Partner
               </Button>
-              <Button
+{/*               <Button
                 size="lg"
                 variant="outline"
                 className="h-16 px-12 text-xl font-bold uppercase tracking-wider rounded-none border-white/20 hover:bg-white/10 bg-transparent group"
               >
                 <UserPlus className="w-6 h-6 mr-3 group-hover:scale-110 transition-transform" />
                 Become a Volunteer
-              </Button>
+              </Button> */}
             </div>
 
             <p className="text-sm text-muted-foreground mt-8 italic">

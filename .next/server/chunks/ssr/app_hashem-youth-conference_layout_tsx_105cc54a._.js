@@ -1,3 +1,0 @@
-module.exports=[14e3,a=>{"use strict";var b=a.i(3637);function c({children:a}){return(0,b.jsx)("html",{lang:"en",children:(0,b.jsx)("body",{children:a})})}a.s(["default",()=>c,"metadata",0,{title:"Hashem Youth Conference | Salvation Is Here",description:"Join the movement at the Hashem Youth Conference. Faith, purpose, and transformation for the next generation."}])}];
-
-//# sourceMappingURL=app_hashem-youth-conference_layout_tsx_105cc54a._.js.map
