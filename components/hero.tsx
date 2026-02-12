@@ -27,11 +27,11 @@ export function Hero() {
       {/* Hero Content */}
       <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
-          <h1 className="text-6xl md:text-9xl font-black tracking-tighter mb-4 text-white uppercase italic">
+          <h1 className="text-4xl md:text-6xl lg:text-9xl font-black tracking-tighter mb-4 text-white uppercase italic">
             Faithwalkers
           </h1>
-          <p className="text-xl md:text-2xl font-bold text-primary mb-6">For we walk by faith, not by sight</p>
-          <p className="text-lg text-white text-muted-foreground mb-10 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-lg md:text-xl lg:text-2xl font-bold text-primary mb-6">For we walk by faith, not by sight</p>
+          <p className="text-base md:text-lg text-white text-muted-foreground mb-10 max-w-2xl mx-auto leading-relaxed">
             Empowering youth to discover their purpose, grow in faith, and build a community that reflects the love of
             Christ.
           </p>
