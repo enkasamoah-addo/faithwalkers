@@ -247,6 +247,11 @@ export default function ConferenceClientPage() {
           .animate-marquee {
             animation: marquee 40s linear infinite;
           }
+          @media (max-width: 768px) {
+            .animate-marquee {
+              animation: marquee 15s linear infinite;
+            }
+          }
         `}</style>
       </section>
 
