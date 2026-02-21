@@ -308,7 +308,7 @@ export default function ConferenceClientPage() {
             </Link>
           </div>
           <div className="text-sm text-muted-foreground italic">
-            &copy; {new Date().getFullYear()} Faithwalkers Youth Ministry. "Walk by Faith."
+            &copy; {new Date().getFullYear()} The Faithwalkers. "For we walk by faith, not by sight."
           </div>
         </div>
       </footer>
