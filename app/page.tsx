@@ -287,7 +287,7 @@ export default function Home() {
               Faithwalkers
             </Link>
             <p className="text-muted-foreground max-w-md leading-relaxed mb-8">
-              "Walk by faith, not by sight." Raising a generation empowered by Christ to walk their purpose.
+              "For we walk by faith, not by sight." Raising a generation empowered by Christ to walk their purpose.
             </p>
             <div className="flex gap-4">
               <Button
@@ -342,7 +342,7 @@ export default function Home() {
           </div>
         </div>
         <div className="max-w-7xl mx-auto mt-20 pt-8 border-t border-white/5 text-center text-sm text-muted-foreground italic">
-          &copy; {new Date().getFullYear()} Faithwalkers Youth Ministry. Built for the Glory of Hashem.
+          &copy; {new Date().getFullYear()} The Faithwalkers. For we walk by faith, not by sight.
         </div>
       </footer>
     </main>
